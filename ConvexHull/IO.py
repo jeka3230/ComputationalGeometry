@@ -32,9 +32,12 @@ def getCoordinates(data):
 
 
 def plot(F, savefig=None, show=None):
-    deep = len(F)
+    maxF = max(F)
     plt.bar(range(len(F)), F)
-    if deep > 100:
+    plt.title("F(m)")
+    plt.xlabel("m")
+    plt.ylabel("F")
+    if maxF > 100:
         for a, b in zip(range(len(F)), F):
             plt.text(a + 0.2, int(b) + 1, str(b))
     if savefig:
