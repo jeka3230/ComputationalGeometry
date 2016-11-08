@@ -8,8 +8,11 @@ class minPosition():
 
     def update(self, x, y, i):
         if y < self.minY:
-            self.minY, self.minX = x, y
+            self.minX, self.minY = x, y
             self.min_pos = i
         elif y == self.minY and x < self.minX:
-            self.minY, self.minX = x, y
+            self.minX, self.minY = x, y
             self.min_pos = i
+
+    def getPoint(self):
+        return self.minX, self.minY

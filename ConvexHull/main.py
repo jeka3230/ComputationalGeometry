@@ -7,7 +7,7 @@ TXT = ".txt"
 PNG = ".png"
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-n", "--name", help="file name without extension", default="4node")
+parser.add_argument("-n", "--name", help="file name without extension", default="633node")
 parser.add_argument("-i", "--input_folder", help="path to folder to input files", default="data/input")
 parser.add_argument("-o", "--output_folder", help="path to folder to output files", default="data/output")
 parser.add_argument("--show_plot", help="show bar plot", action="store_true", default=False)

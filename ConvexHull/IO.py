@@ -2,10 +2,15 @@ import matplotlib.pyplot as plt
 from Data import Data
 from minPosition import minPosition
 import os
+from math import pow
+
 
 def readData(path):
     inputFile = open(path, "r")
     data = map(float, inputFile.read().split())
+    for i, value in enumerate(data):
+        if i != 0:
+            data[i] = value
     inputFile.close()
     return data
 
