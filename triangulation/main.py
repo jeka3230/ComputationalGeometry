@@ -3,7 +3,6 @@
 import numpy as np
 from scipy.spatial import Delaunay
 import matplotlib.pyplot as plt
-import itertools
 from math import sqrt
 import os
 
@@ -48,9 +47,7 @@ for filename in os.listdir(INPUT_FOLDER):
             distance = dist(points[edge[0]], points[edge[1]])
             edges[edge] = distance
 
-    threshold = np.percentile(edges.values(), q=98)
-    # threshold = 30
-    # edges_delete = set([k for (k, v) in edges.iteritems() if v > threshold])
+    threshold = np.percentile(edges.values(), q=99)
     edges_delete = set()
     for (key, length) in edges.iteritems():
         if length > threshold:
@@ -93,9 +90,6 @@ for filename in os.listdir(INPUT_FOLDER):
         point = points[edge[0]]
         point2 = points[edge[1]]
         plt.plot([point[0], point2[0]], [point[1], point2[1]])
-        # plt.show()
-    # what = zip(*[points[hull[0][0]], points[hull[0][1]]])
-    # print what
 
     plt.plot(points[:, 0], points[:, 1], 'o')
     plt.savefig(OUTPUT_FOLDER + filename[:-4] + ".png")
